@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ManagementUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,10 +15,4 @@ use App\Http\Controllers\ManagementUserController;
 Route::get('/', function(){
   return view('home');
 });
-Route::get('user',[ManagementUserController::class, 'index'])->name('user.index');
-Route::get('user/create',[ManagementUserController::class, 'create'])->name('user.create');
-Route::post('user',[ManagementUserController::class, 'store'])->name('user.store');
-Route::get('user/{user}',[ManagementUserController::class, 'show'])->name('user.show');
-Route::put('user/{user}',[ManagementUserController::class, 'update'])->name('user.update');
-Route::delete('user/{user}',[ManagementUserController::class, 'delete'])->name('user.delete');
-Route::get('user/{user}/edit',[ManagementUserController::class, 'edit'])->name('user.edit');
+Route::resource('user',ManagementUserController::class);
