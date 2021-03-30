@@ -11,6 +11,7 @@
         @foreach ($pelajaran as $p)
           <li>{{ $p }}</li>
         @endforeach
+        
       </ul>
     </div>
   </div>
