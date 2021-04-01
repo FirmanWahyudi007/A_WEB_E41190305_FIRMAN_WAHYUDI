@@ -105,17 +105,9 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
-
-
         <!-- Today status end -->
-
-
-
         <div class="row">
-
             <div class="col-lg-9 col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
