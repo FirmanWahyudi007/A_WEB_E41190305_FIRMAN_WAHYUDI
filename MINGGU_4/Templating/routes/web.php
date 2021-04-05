@@ -22,5 +22,5 @@ Route::group(['namespace' => 'Frontend'] ,function(){
 });
 
 Route::group(['namespace' => 'Backend'] ,function(){
-  Route::resource('dashboard','DahsboardController');
+  Route::resource('dashboard','DashboardController');
 });
