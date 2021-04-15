@@ -24,3 +24,7 @@ Route::group(['namespace' => 'Frontend'] ,function(){
 Route::group(['namespace' => 'Backend'] ,function(){
   Route::resource('dashboard','DashboardController');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
