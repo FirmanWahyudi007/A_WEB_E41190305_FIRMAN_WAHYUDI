@@ -16,12 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('backend.dashboard');
 });
-
 Route::group(['namespace' => 'Frontend'] ,function(){
   Route::resource('home','HomeController');
 });
-
-
 Auth::routes();
 Route::group(['namespace' => 'Backend'] ,function(){
   Route::resource('dashboard','DashboardController');
