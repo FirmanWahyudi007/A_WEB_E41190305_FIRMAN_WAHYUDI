@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('backend.dashboard');
 // });
-
+Route::get('/coba', function () {
+    return view('welcome');
+});
 Route::group(['namespace' => 'Backend'] ,function(){
   Route::get('admin','DashboardController@index');
   Route::get('admin/data_donatur','DashboardController@dataDonatur');

@@ -63,4 +63,12 @@ class LoginController extends Controller
       //JIKA SALAH MAKA KEMBALI PADA HALAMAN LOGIN DAN AKAN ADA NOTIFIKASI YANG MUNCUL
       return redirect()->route('login')->with(['error' => 'Username atau Password salah!!!']);
     }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/login')
+            ->withSuccess('Terimakasih, selamat datang kembali!');
+    }
 }
