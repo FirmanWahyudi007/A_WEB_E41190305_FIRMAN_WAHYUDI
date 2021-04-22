@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Pendidikan;
 use Illuminate\Support\Facades\DB;
 
 class PendidikanController extends Controller
@@ -15,7 +16,7 @@ class PendidikanController extends Controller
 
   public function index()
   {
-    $pendidikan = DB::table('pendidikan')->get();
+    $pendidikan = Pendidikan::OrderBy('tingkatan','ASC')->get();
     return view('backend/pendidikan.index', compact('pendidikan'));
   }
 
@@ -28,38 +29,27 @@ class PendidikanController extends Controller
 
   public function store(Request $request)
   {
-    DB::table('pendidikan')->insert([
-      'pendidikan' => $request->pendidikan,
-      'gelar' => $request->gelar,
-      'tahun_masuk' => $request->tahun_masuk,
-      'tahun_lulus' => $request->tahun_lulus
-    ]);
+    Pendidikan::create($request->all());
     return redirect()->route('pendidikan.index')
                     ->with('success','Data Pendidikan berhasil ditambahkan.');
   }
 
-  public function edit($id)
+  public function edit(Pendidikan $pendidikan)
   {
-    $pendidikan = DB::table('pendidikan')->where('id',$id)->first();
     $admin_lecturer = "Mengubah";
     return view('backend/pendidikan.create', compact('pendidikan','admin_lecturer'));
   }
 
-  public function update(Request $request)
+  public function update(Pendidikan $pendidikan,Request $request)
   {
-    DB::table('pendidikan')->where('id',$request->id)->update([
-      'pendidikan' => $request->pendidikan,
-      'gelar' => $request->gelar,
-      'tahun_masuk' => $request->tahun_masuk,
-      'tahun_lulus' => $request->tahun_lulus
-    ]);
+    $pendidikan->update($request->all());
     return redirect()->route('pendidikan.index')
                     ->with('success','Data Pendidikan berhasil diperbaharui.');
   }
 
-  public function destroy($id)
+  public function destroy(Pendidikan $pendidikan)
   {
-    DB::table('pendidikan')->where('id',$id)->delete();
+    $pendidikan->delete();
     return redirect()->route('pendidikan.index')
                     ->with('success','Data Pendidikan berhasil dihapus.');
   }

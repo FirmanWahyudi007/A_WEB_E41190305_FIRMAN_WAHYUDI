@@ -41,13 +41,22 @@
                     <div class="form-group">
                       <label for="cname" class="control-label col-lg-2">Pendidikan <span class="require">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control" type="text" name="pendidikan" id="pendidikan" minlenght="5" value="{{ isset($pendidikan) ? $pendidikan->pendidikan : ''}}" require />
+                        <input class="form-control" type="text" name="nama" id="nama" minlenght="5" value="{{ isset($pendidikan) ? $pendidikan->nama : ''}}" require />
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="cname" class="control-label col-lg-2">Gelar <span class="require">*</span></label>
+                      <label for="cname" class="control-label col-lg-2">Tingkatan <span class="require">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control" type="text" name="gelar" id="gelar" minlenght="2" value="{{ isset($pendidikan) ? $pendidikan->gelar : ''}}" require />
+                        <select class="form-control m-bot15" name="tingkatan" id="tingkatan" required>
+                          <option value="1" {{ (isset($pendidikan) && $pendidikan->tingkatan == 1) ? 'selected' : '' }}>TK</option>
+                          <option value="2" {{ (isset($pendidikan) && $pendidikan->tingkatan == 2) ? 'selected' : '' }}>SD</option>
+                          <option value="3" {{ (isset($pendidikan) && $pendidikan->tingkatan == 3) ? 'selected' : '' }}>SMP</option>
+                          <option value="4" {{ (isset($pendidikan) && $pendidikan->tingkatan == 4) ? 'selected' : '' }}>SMA/SMK</option>
+                          <option value="5" {{ (isset($pendidikan) && $pendidikan->tingkatan == 5) ? 'selected' : '' }}>D3</option>
+                          <option value="6" {{ (isset($pendidikan) && $pendidikan->tingkatan == 6) ? 'selected' : '' }}>D4/S1</option>
+                          <option value="7" {{ (isset($pendidikan) && $pendidikan->tingkatan == 7) ? 'selected' : '' }}>S2</option>
+                          <option value="8" {{ (isset($pendidikan) && $pendidikan->tingkatan == 8) ? 'selected' : '' }}>S3</option>
+                        </select>
                       </div>
                     </div>
                     <div class="form-group">

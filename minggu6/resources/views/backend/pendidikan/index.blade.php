@@ -41,8 +41,26 @@
                     </tr>
                     @foreach ($pendidikan as $item)
                       <tr>
-                        <td>{{$item->pendidikan}}</td>
-                        <td>{{$item->gelar}}</td>
+                        <td>{{$item->nama}}</td>
+                        <td>
+                          @if ($item->tingkatan == 1)
+                            TK
+                          @elseif ($item->tingkatan == 2)
+                            SD
+                          @elseif ($item->tingkatan == 3)
+                            SMP
+                          @elseif ($item->tingkatan == 4)
+                            SMA/SMK
+                          @elseif ($item->tingkatan == 5)
+                            D3
+                          @elseif ($item->tingkatan == 6)
+                            D4/S1
+                          @elseif ($item->tingkatan == 7)
+                            S2
+                          @elseif ($item->tingkatan == 8)
+                            S3
+                          @endif
+                        </td>
                         <td>{{$item->tahun_masuk}}</td>
                         <td>{{$item->tahun_lulus}}</td>
                         <td>
