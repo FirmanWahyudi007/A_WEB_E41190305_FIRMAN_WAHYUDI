@@ -20,8 +20,6 @@ class MahasiswaSeeder extends Seeder
           'jenis_kelamin' => 1,
           'prodi' => 1,
           'no_hp' => "085231481241"
-          'created_at' => now(),
-          'updated_at' => now()
         ]);
     }
 }
