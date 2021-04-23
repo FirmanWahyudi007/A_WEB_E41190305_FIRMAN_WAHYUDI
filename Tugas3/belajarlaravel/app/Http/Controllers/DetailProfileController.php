@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class DetailProfileController extends Controller
 {
-    //
+    public function __construct()
+    {
+        #code
+    }
+    
 }
