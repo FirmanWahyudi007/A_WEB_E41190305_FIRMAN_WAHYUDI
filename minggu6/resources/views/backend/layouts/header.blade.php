@@ -19,10 +19,10 @@
     <link href="{{asset('backend/css/elegant-icons-style.css')}}" rel="stylesheet" />
     <link href="{{asset('backend/css/font-awesome.min.css')}}" rel="stylesheet" />
     <!-- full calendar .css')}}-->
-    <linkhref="{{asset('backend/vendor/fullcalendar/fullcalendar/bootstrap-fullcalendar..css')}}" rel="stylesheet" />
-    <linkhref="{{asset('backend/vendor/fullcalendar/fullcalendar/fullcalendar.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/vendor/fullcalendar/fullcalendar/bootstrap-fullcalendar..css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/vendor/fullcalendar/fullcalendar/fullcalendar.css')}}" rel="stylesheet" />
     <!-- easy pie chart-->
-    <linkhref="{{asset('backend/vendor/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/.css')}}" media="screen" />
+    <link href="{{asset('backend/vendor/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/.css')}}" media="screen" />
     <!-- owl carousel -->
     <link rel="stylesheet" href="{{asset('backend/css/owl.carousel.css')}}" type="text/.css')}}">
     <link href="{{asset('backend/css/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet">

@@ -14,5 +14,6 @@ class pengalaman_kerja extends Model
         'jabatan',
         'tahun_masuk',
         'tahun_keluar',
+        'userID',
     ];
 }

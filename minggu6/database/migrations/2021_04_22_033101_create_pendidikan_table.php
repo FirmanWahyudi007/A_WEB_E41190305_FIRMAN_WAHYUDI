@@ -19,6 +19,7 @@ class CreatePendidikanTable extends Migration
             $table->tinyInteger('tingkatan');
             $table->year('tahun_masuk');
             $table->year('tahun_lulus');
+            $table->integer('userID')->unsigned()->default(1);
             $table->timestamps();
         });
     }

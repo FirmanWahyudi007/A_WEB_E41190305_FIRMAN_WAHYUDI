@@ -14,5 +14,6 @@ class Pendidikan extends Model
         'tingkatan',
         'tahun_masuk',
         'tahun_lulus',
+        'userID',
     ];
 }

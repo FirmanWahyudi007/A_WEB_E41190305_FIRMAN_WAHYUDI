@@ -19,6 +19,7 @@ class CreatePengalamanKerjasTable extends Migration
             $table->string('jabatan');
             $table->year('tahun_masuk');
             $table->year('tahun_keluar');
+            $table->integer('userID')->unsigned()->default(1);
             $table->timestamps();
         });
     }

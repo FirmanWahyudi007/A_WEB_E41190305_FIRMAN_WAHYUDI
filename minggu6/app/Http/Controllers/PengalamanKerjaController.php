@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class PengalamanKerjaController extends Controller
 {
@@ -15,7 +16,9 @@ class PengalamanKerjaController extends Controller
 
     public function index()
     {
-      $pengalaman_kerja = DB::table('pengalaman_kerja')->get();
+      $id = Auth::id();
+      $pengalaman_kerja = DB::table('pengalaman_kerja')->where('userID',$id)->get();
+      //dd($pengalaman_kerja);
       return view('backend/pengalaman_kerja.index', compact('pengalaman_kerja'));
     }
 
@@ -32,7 +35,8 @@ class PengalamanKerjaController extends Controller
         'nama' => $request->nama,
         'jabatan' => $request->jabatan,
         'tahun_masuk' => $request->tahun_masuk,
-        'tahun_keluar' => $request->tahun_keluar
+        'tahun_keluar' => $request->tahun_keluar,
+        'UserID' => $request->userID,
       ]);
       return redirect()->route('pengalaman_kerja.index')
                       ->with('success','Data Pengalaman Kerja berhasil ditambahkan.');
@@ -42,7 +46,10 @@ class PengalamanKerjaController extends Controller
     {
       $pengalaman_kerja = DB::table('pengalaman_kerja')->where('id',$id)->first();
       $admin_lecturer = "Mengubah";
-      return view('backend/pengalaman_kerja.create', compact('pengalaman_kerja','admin_lecturer'));
+      if (Auth::id() == $pengalaman_kerja->userID) {
+        return view('backend/pengalaman_kerja.create', compact('pengalaman_kerja','admin_lecturer'));
+      }
+      return redirect()->route('pengalaman_kerja.index');
     }
 
     public function update(Request $request)

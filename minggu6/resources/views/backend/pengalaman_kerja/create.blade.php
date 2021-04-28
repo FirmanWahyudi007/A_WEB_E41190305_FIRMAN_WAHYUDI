@@ -38,6 +38,7 @@
                     {!! csrf_field() !!}
                     {!! isset($pengalaman_kerja) ? method_field('PUT') : '' !!}
                     <input type="hidden" name="id" value="{{ isset($pengalaman_kerja) ? $pengalaman_kerja->id : ''}}">
+                    <input type="hidden" name="userID" value="{{ Auth::id() }}">
                     <div class="form-group">
                       <label for="cname" class="control-label col-lg-2">Nama Perusahaan <span class="require">*</span></label>
                       <div class="col-lg-10">
